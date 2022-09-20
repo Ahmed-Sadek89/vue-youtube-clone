@@ -1,11 +1,12 @@
 .home{
     background-color: $dark;
     color: $white;
-    overflow: hidden;
     @include xs{
-        height: 100vh;
+        height: 100%;
+        overflow: visible;
     }
     @include md{
         height: 92.6vh;  
+        overflow: hidden;
     }
 }
