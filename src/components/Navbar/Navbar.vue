@@ -1,17 +1,38 @@
 <script lang="ts">
 import { logo } from '@/assets/utils/Constant';
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { useRouter } from 'vue-router';
+import { useStore } from 'vuex';
 
 export default defineComponent({
     name: "Navbar",
     setup () {
+        const { dispatch } = useStore();
         const router = useRouter();
+
+        const inputSearch = ref<string>('');
         
-        const handleSubmit = () => { console.log('searching...') }
+        const setInputSearch = (e: any) => {
+            inputSearch.value = e.target.value
+        }
+
+        const handleSubmit = () => { 
+            if( inputSearch.value !== '') {
+                console.log('searching...');
+                dispatch('searchResultAction', inputSearch.value) 
+                router.push({
+                    name: "SearchFeed",
+                    params: {
+                        search_term: inputSearch.value
+                    }
+                })
+            }
+         }
         return { 
             router,
             logo,
+            inputSearch,
+            setInputSearch,
             handleSubmit
         }
     }
@@ -45,7 +66,13 @@ export default defineComponent({
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 </ul>
                 <form class="d-flex" @submit.prevent="handleSubmit">
-                    <input class="form-control me-2" type="search" placeholder="Search">
+                    <input 
+                        class="form-control me-2" 
+                        type="search" 
+                        placeholder="Search..."
+                        v-model="inputSearch"
+                        @input="setInputSearch"
+                    >
                     <button class="btn searchBtn" type="submit">Search</button>
                 </form>
             </div>

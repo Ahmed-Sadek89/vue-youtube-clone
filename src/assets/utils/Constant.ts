@@ -25,6 +25,7 @@ export const categories: category[] = [
   { id: Math.random(), name: 'Gaming', icon: "fa-solid fa-gamepad" },
   { id: Math.random(), name: 'Live', icon: "fa-solid fa-tv" },
   { id: Math.random(), name: 'peaky blinders', icon: "fa-solid fa-tv" },
+  { id: Math.random(), name: 'abdullah rushdy-عبدالله رشدي', icon: "fa-solid fa-tv" },
   { id: Math.random(), name: 'Sport', icon: "fa-solid fa-dumbbell" },
   { id: Math.random(), name: 'Fashion', icon: "fa-brands fa-redhat" },
   { id: Math.random(), name: 'Beauty', icon: "fa-brands fa-cotton-bureau" },

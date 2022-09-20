@@ -3,7 +3,6 @@ import { PropType } from "vue";
 
 export const props = {
     categorySelected: {
-        required: true,
         type: String,
     },
     loading: {
@@ -19,4 +18,7 @@ export const props = {
         type: Array as PropType<Items[]>,
         default: []
     },
+    page: {
+        type: String
+    }
 }

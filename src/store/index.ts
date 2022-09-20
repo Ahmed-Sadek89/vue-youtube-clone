@@ -19,7 +19,12 @@ export default createStore({
             data: [],
             loading: false, 
             error: false
-        }
+        },
+        searchResultState: {
+            data: [],
+            loading: false, 
+            error: false
+        },
     },
     mutations: {
         // set category
@@ -40,6 +45,11 @@ export default createStore({
         // set vedios that related to selected channel in state
         setVediosRelatedToChannel( state, { data, error, loading } ) {
             setResultInMutation( state.vediosRelatedToChannel, { data, error, loading }  )
+        },
+
+        // set search result in state
+        setSearchResultMutation( state, { data, error, loading } ) {
+            setResultInMutation( state.searchResultState, { data, error, loading }  )
         }
     },
     actions: {
@@ -63,6 +73,13 @@ export default createStore({
             const mutationName: string = 'setVediosRelatedToChannel';
             const apiQuery: string = `search?channelId=${payload}&part=snippet&order=date`
             getResultsFromFetching(commit, apiQuery, mutationName)
-        }
+        },
+
+        // get search result by what you wanna search
+        searchResultAction( { commit }, payload ) {
+            const mutationName: string = 'setSearchResultMutation';
+            const apiQuery: string = `search?part=snippet&q=${payload}`
+            getResultsFromFetching(commit, apiQuery, mutationName)
+        },
     }
 })

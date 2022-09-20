@@ -30,9 +30,11 @@ export default defineComponent({
         </template>
         <template v-else>
             <img 
+                v-if="data[0]?.brandingSettings"
                 referrerpolicy="no-referrer"
-                :src="`${data[0].brandingSettings.image.bannerExternalUrl}`" 
-                :alt="`${data[0].brandingSettings.channel.title}`">
+                :src="`${data[0]?.brandingSettings?.image.bannerExternalUrl}`" 
+                :alt="`${data[0]?.brandingSettings?.channel.title}`"
+            />
         </template>
     </div>
 </template>

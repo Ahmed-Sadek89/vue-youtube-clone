@@ -12,18 +12,7 @@
             color: $red;
         }
     }
-    .menubar-content{
-        padding-top: 20px;
-        @include xs{
-            padding-bottom: 20px;  
-            height: 100%;
-            overflow-y: auto;
-        }
-        @include md{
-            overflow-y: scroll;
-            padding-bottom: 40px;
-            height: 85vh;  
-        }
+    .menubar-content, .menubar-content-searchPage{
         .gapping{
             margin-bottom: 20px;
             .vedio, .vedio2{
@@ -46,21 +35,38 @@
             
         }
     }
-    .menubar-footer{
-        text-align: center;
-        
-        padding-bottom: 20px;
+    .menubar-content{
+        padding-top: 20px;
         @include xs{
-            display: block;
+            padding-bottom: 20px;  
+            height: 100%;
+            overflow-y: auto;
         }
         @include md{
-            display: none;
+            overflow-y: scroll;
+            padding-bottom: 40px;
+            height: 85vh;  
         }
+    }
+    .menubar-footer, .menubar-footer-searchPage{
+        text-align: center;
+        padding: 20px 0px;
         h4{
             font-size: 10px;
         }
         a{
             color: $red
         }
+    }
+    .menubar-footer{
+        @include xs{
+            display: block;
+        }
+        @include md{
+            display: none;
+        }
+    } 
+    .menubar-footer-searchPage{
+        display: block;
     }
 }
