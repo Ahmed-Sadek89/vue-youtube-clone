@@ -1,0 +1,11 @@
+.home{
+    background-color: $dark;
+    color: $white;
+    overflow: hidden;
+    @include xs{
+        height: 100vh;
+    }
+    @include md{
+        height: 92.6vh;  
+    }
+}

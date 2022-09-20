@@ -1,0 +1,56 @@
+.vedio{
+    .vedio-thumbnails{
+        background-color: #1a1a1a;
+        @include xs{
+            height: 20vh;
+        }
+        @include sm{
+            height: 31vh;
+        }
+        @include md{
+            height: 26vh;
+        }
+        @include lg{
+            height: 20vh;
+        }
+        img{
+            width: 100%;
+            @include xs{
+                
+                height: 167px
+            }
+            @include sm{
+                
+                height: 274px;
+            }
+            @include md{
+                
+                height: 225px;
+            }
+            @include lg{
+               
+                height: 169px;
+            }
+        }
+    }
+    .videoDesc{
+        background: #1a1a1a;
+        padding-top: 20px;
+        padding-bottom: 40px;
+        .vedio-title{
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .channel-title{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #a7a4a4;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+    }
+}

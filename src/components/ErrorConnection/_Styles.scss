@@ -1,0 +1,17 @@
+.channel-error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+    text-transform: capitalize;
+    height: 65vh;
+    img{
+        object-fit: cover;
+        width: 25%;
+    }
+    button{
+        text-transform: capitalize;
+        background: $red;
+    }
+}

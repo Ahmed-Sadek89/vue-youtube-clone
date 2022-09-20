@@ -1,0 +1,30 @@
+.vedio2{
+    .vedio-thumbnails2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            border-radius: 100%;
+            @include xs{
+                padding: 20px;
+            }
+            @include md{
+                padding: 20px;
+            }
+        }
+    }
+    .videoDesc2{
+        color: $white;
+        h5{
+            text-align: center;
+            i{
+                font-size: 13px;
+            }
+        }
+        span{
+            font-size: 15px;
+            color: $white;
+            opacity: 0.6;
+        }
+    }
+}

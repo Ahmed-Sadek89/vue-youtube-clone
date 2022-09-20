@@ -5,3 +5,29 @@ body, #app{
 ul{
     list-style: none;
 }
+/* width */
+::-webkit-scrollbar {
+  @include xs{
+    width: 0px;
+    height: 0px;
+  }
+  @include md{
+    width: 5px;
+    height: 5px;
+  }
+}
+
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $red;
+}
+
+
+a{
+  text-decoration: none;
+  color: inherit;
+  &:hover{
+    color: inherit
+  }
+}

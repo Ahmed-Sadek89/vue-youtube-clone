@@ -1,17 +1,28 @@
 <template>
-  <div class="sadek">
-    <h1>Vue Youtube Clone</h1>
-    <Sadek />
+  <div>
+    <Navbar />
+    <router-view />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import Sadek from './components/Sadek/Sadek.vue'
+import { defineComponent, computed } from 'vue'
+import { useStore } from 'vuex';
+import Navbar from './components/Navbar/Navbar.vue'
 
 export default defineComponent({
-    setup() {
-    },
-    components: { Sadek }
+  name: "App",
+  setup() {
+    const { state, dispatch } = useStore();
+
+    const categorySelected = computed(() => {
+      return state.categoryName
+    });
+    
+    dispatch('homeVediosAction', categorySelected.value)
+
+    return {}
+  },
+  components: { Navbar }
 })
 </script>

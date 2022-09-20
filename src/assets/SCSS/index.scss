@@ -1,10 +1,24 @@
 // variables
 @import './variables';
-// base
-@import './base';
 // media queries
 @import './media';
-
+// base
+@import './base';
 // file includes
+// views
+@import "../../views/Home/Styles";
+// @import "../../views/ChannelDetails/Styles";
+
 // components
-@import '../../components/Sadek/Styles'
+@import "../../components/ItemsLoading/Styles";
+@import "../../components/OneItemLoading/Styles";
+@import "../../components/ErrorConnection/Styles";
+@import "../../components/Navbar/Styles";
+@import "../../components/Sidebar/Styles";
+@import "../../components/Menubar/Styles";
+@import "../../components/ChannelCard/Styles";
+@import "../../components/VedioCard/Styles";
+@import "../../components/ChannelBg/Styles";
+@import "../../components/ChannelInfo/Styles";
+@import "../../components/VediosByChannel/Styles";
+
