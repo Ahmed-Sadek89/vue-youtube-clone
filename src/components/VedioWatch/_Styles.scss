@@ -1,0 +1,30 @@
+.data{
+    padding: 20px 10px;
+    h1{
+        @include xs{
+            font-size: 25px;
+        }
+        @include md{
+            font-size: 35px;
+        }
+        margin-bottom: 20px;
+    }
+    .div{
+        display: flex;
+        @include xs{
+            flex-direction: column; 
+        }
+        @include md{
+            flex-direction: row; 
+        }
+        justify-content: space-between;
+        h6{
+            flex: 3;
+            cursor: pointer;
+        }
+        p{
+            display: flex;
+            gap: 10px;
+        }
+    }
+}

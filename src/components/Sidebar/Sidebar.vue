@@ -1,7 +1,7 @@
 <script lang="ts">
 import { categories } from '@/assets/utils/Constant';
 import { category } from '@/types/Category';
-import { defineComponent, PropType, ref } from 'vue'
+import { defineComponent, PropType } from 'vue'
 
 export default defineComponent({
     name: "Sidebar",
@@ -18,7 +18,6 @@ export default defineComponent({
     setup (props, { emit }) {
         const handleCategoryEvent = (newCategory: string) => {
             emit('categoryEvent', newCategory)
-            
         }
         return { 
             categories, 

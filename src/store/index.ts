@@ -25,6 +25,17 @@ export default createStore({
             loading: false, 
             error: false
         },
+
+        vedioDetailsState: {
+            data: [],
+            loading: false, 
+            error: false
+        },
+        vediosRelatedToVedioIdState: {
+            data: [],
+            loading: false, 
+            error: false
+        },
     },
     mutations: {
         // set category
@@ -50,7 +61,17 @@ export default createStore({
         // set search result in state
         setSearchResultMutation( state, { data, error, loading } ) {
             setResultInMutation( state.searchResultState, { data, error, loading }  )
-        }
+        },
+
+        // set vedio details in state
+        setVedioDetailsMutaion( state, { data, error, loading } ) {
+            setResultInMutation( state.vedioDetailsState, { data, error, loading } )
+        },
+
+        // set vedios related to vedio id in state
+        setVediosRelatedToVedioIdMutaion( state, { data, error, loading } ) {
+            setResultInMutation( state.vediosRelatedToVedioIdState, { data, error, loading } )
+        },
     },
     actions: {
         // for getting all vedios and channels by category name
@@ -79,6 +100,20 @@ export default createStore({
         searchResultAction( { commit }, payload ) {
             const mutationName: string = 'setSearchResultMutation';
             const apiQuery: string = `search?part=snippet&q=${payload}`
+            getResultsFromFetching(commit, apiQuery, mutationName)
+        },
+
+        // get vedio details by vedio id
+        getVedioDetailsAction( { commit }, payload ) {
+            const mutationName: string = 'setVedioDetailsMutaion';
+            const apiQuery: string = `videos?part=snippet,statistics&id=${payload}`
+            getResultsFromFetching(commit, apiQuery, mutationName)
+        },
+
+        // get all vedios related to current vedio id
+        getVediosRelatedToVedioId( { commit }, payload ) {
+            const mutationName: string = 'setVediosRelatedToVedioIdMutaion';
+            const apiQuery: string = `search?part=snippet&relatedToVideoId=${payload}&type=video`
             getResultsFromFetching(commit, apiQuery, mutationName)
         },
     }

@@ -7,8 +7,8 @@ type stateName = {
     data: Items[], 
     error: boolean
 }
-const GetChannelAndVedios = (
-    channelId: string | string[],
+const DispatchData = (
+    id_param: string | string[],
     stateName: stateName,
     dispatchName: string
 ) => {
@@ -26,7 +26,7 @@ const GetChannelAndVedios = (
         return stateName.error
     })
     console.log(dispatchName)
-    dispatch(dispatchName, channelId)
+    dispatch(dispatchName, id_param)
     return {
         data,
         loading,
@@ -34,4 +34,4 @@ const GetChannelAndVedios = (
     }
 }
 
-export default GetChannelAndVedios
+export default DispatchData

@@ -13,7 +13,9 @@ export type Items = {
         }
     },
     statistics: {
-        subscriberCount: string
+        subscriberCount: string,
+        viewCount: string,
+        likeCount: string
     },
     snippet: {
         channelTitle: string,

@@ -25,7 +25,12 @@ export default defineComponent({
 
 <template>
     <div class="channel-background">
-        <template v-if="loading || data.length === 0 || error">
+        <template v-if="
+            loading || 
+            data.length === 0 || 
+            error || 
+            !data[0].brandingSettings?.image
+        ">
             <div class="channel-background"></div>
         </template>
         <template v-else>

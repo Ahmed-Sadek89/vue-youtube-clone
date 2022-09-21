@@ -1,0 +1,22 @@
+.vedioDetails{
+    background-color: $dark;
+    color: $white;
+    @include xs{
+        height: 100%;
+        overflow: visible;
+    }
+    @include lg{
+        height: 95vh;
+        overflow: hidden;
+    }
+    .vedios{
+        @include xs{
+            height: 100%;
+            overflow: visible;
+        }
+        @include lg{
+            height: 100vh;
+            overflow: scroll;
+        }
+    }
+}

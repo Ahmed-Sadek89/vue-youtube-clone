@@ -35,10 +35,26 @@ export default defineComponent({
                 }`" 
                 class="card-img-top"
                 :alt="`${item.snippet.title}`"
+                @click="router.push({
+                    name: 'VideoDetails',
+                    params: {
+                        id: item.id.videoId
+                    }
+                })"
             /> 
         </div>
         <div class="card-body videoDesc">
-            <h5 class="card-title vedio-title">{{item.snippet.title}}</h5>
+            <h5
+                class="card-title vedio-title"
+                @click="router.push({
+                    name: 'VideoDetails',
+                    params: {
+                        id: item.id.videoId
+                    }
+                })"
+            >
+                {{item.snippet.title}}
+            </h5>
             <p
                 class="card-text channel-title"
                 @click="page !=='channelDetails' &&

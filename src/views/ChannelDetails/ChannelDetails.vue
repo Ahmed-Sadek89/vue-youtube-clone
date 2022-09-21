@@ -1,7 +1,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useRoute } from 'vue-router';
-import GetChannelAndVedios from './GetChannelAndVedios';
+import DispatchData from '@/DispatchData';
 import ChannelBg from '@/components/ChannelBg/ChannelBg.vue';
 import ChannelInfo from '../../components/ChannelInfo/ChannelInfo.vue';
 import VediosByChannel from '@/components/VediosByChannel/VediosByChannel.vue';
@@ -21,14 +21,14 @@ export default defineComponent({
             loading: channelLoading, 
             data: channelDetails, 
             error: channelError 
-        } = GetChannelAndVedios(
+        } = DispatchData(
             channelId, state.channelDetails, "getChannelDetailsByIdAction"
         );
         // vedios by channel id
         const { 
             loading: vediosLoading, 
             data: vediosAccordingToChannel, 
-        } = GetChannelAndVedios(
+        } = DispatchData(
             channelId, state.vediosRelatedToChannel, "getVediosByChannelIdAction"
         );
         
